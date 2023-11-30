@@ -34,7 +34,6 @@
             this.hora = new System.Windows.Forms.Label();
             this.data = new System.Windows.Forms.Label();
             this.panelLeftModal = new System.Windows.Forms.Panel();
-            this.timerRelogio = new System.Windows.Forms.Timer(this.components);
             this.panelDropDown = new System.Windows.Forms.Panel();
             this.btAgendaAgendamento = new System.Windows.Forms.Button();
             this.btAgendaConsulta = new System.Windows.Forms.Button();
@@ -43,21 +42,27 @@
             this.btFuncionarioEditar = new System.Windows.Forms.Button();
             this.btFuncionarioCadastrar = new System.Windows.Forms.Button();
             this.btFuncionarioConsulta = new System.Windows.Forms.Button();
-            this.btFuncionario = new System.Windows.Forms.Button();
             this.panelDropDown3 = new System.Windows.Forms.Panel();
             this.btClienteDeletar = new System.Windows.Forms.Button();
             this.btClienteEditar = new System.Windows.Forms.Button();
             this.btClienteCadastrar = new System.Windows.Forms.Button();
             this.btClienteConsulta = new System.Windows.Forms.Button();
-            this.btCliente = new System.Windows.Forms.Button();
             this.panelDropDown4 = new System.Windows.Forms.Panel();
             this.btServicoDeletar = new System.Windows.Forms.Button();
             this.btServicoEditar = new System.Windows.Forms.Button();
             this.btServicoCriar = new System.Windows.Forms.Button();
             this.btServicoConsulta = new System.Windows.Forms.Button();
-            this.btServicos = new System.Windows.Forms.Button();
+            this.timerRelogio = new System.Windows.Forms.Timer(this.components);
+            this.timerAgenda = new System.Windows.Forms.Timer(this.components);
+            this.timerFuncionarios = new System.Windows.Forms.Timer(this.components);
+            this.timerClientes = new System.Windows.Forms.Timer(this.components);
+            this.timerServicos = new System.Windows.Forms.Timer(this.components);
             this.btAgenda = new System.Windows.Forms.Button();
+            this.btFuncionario = new System.Windows.Forms.Button();
+            this.btCliente = new System.Windows.Forms.Button();
+            this.btServicos = new System.Windows.Forms.Button();
             this.relogioGif = new System.Windows.Forms.PictureBox();
+            this.panelAgenda = new System.Windows.Forms.Panel();
             this.panelLeftTop.SuspendLayout();
             this.panelLeftModal.SuspendLayout();
             this.panelDropDown.SuspendLayout();
@@ -117,11 +122,6 @@
             this.panelLeftModal.Name = "panelLeftModal";
             this.panelLeftModal.Size = new System.Drawing.Size(202, 659);
             this.panelLeftModal.TabIndex = 2;
-            // 
-            // timerRelogio
-            // 
-            this.timerRelogio.Enabled = true;
-            this.timerRelogio.Tick += new System.EventHandler(this.timerRelogio_Tick);
             // 
             // panelDropDown
             // 
@@ -235,25 +235,6 @@
             this.btFuncionarioConsulta.Text = "Consulta";
             this.btFuncionarioConsulta.UseVisualStyleBackColor = false;
             // 
-            // btFuncionario
-            // 
-            this.btFuncionario.BackColor = System.Drawing.Color.Turquoise;
-            this.btFuncionario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btFuncionario.FlatAppearance.BorderSize = 0;
-            this.btFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btFuncionario.Image = global::Projeto_V1.Properties.Resources.Expand_Arrow_20px;
-            this.btFuncionario.Location = new System.Drawing.Point(0, 0);
-            this.btFuncionario.MaximumSize = new System.Drawing.Size(190, 227);
-            this.btFuncionario.MinimumSize = new System.Drawing.Size(190, 60);
-            this.btFuncionario.Name = "btFuncionario";
-            this.btFuncionario.Size = new System.Drawing.Size(190, 62);
-            this.btFuncionario.TabIndex = 0;
-            this.btFuncionario.Text = "Funcionários";
-            this.btFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btFuncionario.UseVisualStyleBackColor = false;
-            // 
             // panelDropDown3
             // 
             this.panelDropDown3.BackColor = System.Drawing.Color.Transparent;
@@ -324,24 +305,6 @@
             this.btClienteConsulta.TabIndex = 1;
             this.btClienteConsulta.Text = "Consulta";
             this.btClienteConsulta.UseVisualStyleBackColor = false;
-            // 
-            // btCliente
-            // 
-            this.btCliente.BackColor = System.Drawing.Color.Turquoise;
-            this.btCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btCliente.FlatAppearance.BorderSize = 0;
-            this.btCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCliente.Image = global::Projeto_V1.Properties.Resources.Expand_Arrow_20px;
-            this.btCliente.Location = new System.Drawing.Point(0, 0);
-            this.btCliente.MaximumSize = new System.Drawing.Size(190, 227);
-            this.btCliente.MinimumSize = new System.Drawing.Size(190, 60);
-            this.btCliente.Name = "btCliente";
-            this.btCliente.Size = new System.Drawing.Size(190, 62);
-            this.btCliente.TabIndex = 0;
-            this.btCliente.Text = "Clientes";
-            this.btCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btCliente.UseVisualStyleBackColor = false;
             // 
             // panelDropDown4
             // 
@@ -414,6 +377,91 @@
             this.btServicoConsulta.Text = "Consulta";
             this.btServicoConsulta.UseVisualStyleBackColor = false;
             // 
+            // timerRelogio
+            // 
+            this.timerRelogio.Enabled = true;
+            this.timerRelogio.Tick += new System.EventHandler(this.timerRelogio_Tick_1);
+            // 
+            // timerAgenda
+            // 
+            this.timerAgenda.Enabled = true;
+            this.timerAgenda.Interval = 15;
+            this.timerAgenda.Tick += new System.EventHandler(this.timerAgenda_Tick_1);
+            // 
+            // timerFuncionarios
+            // 
+            this.timerFuncionarios.Enabled = true;
+            this.timerFuncionarios.Interval = 15;
+            this.timerFuncionarios.Tick += new System.EventHandler(this.timerFuncionarios_Tick_1);
+            // 
+            // timerClientes
+            // 
+            this.timerClientes.Enabled = true;
+            this.timerClientes.Interval = 15;
+            this.timerClientes.Tick += new System.EventHandler(this.timerClientes_Tick_1);
+            // 
+            // timerServicos
+            // 
+            this.timerServicos.Enabled = true;
+            this.timerServicos.Interval = 15;
+            this.timerServicos.Tick += new System.EventHandler(this.timerServicos_Tick_1);
+            // 
+            // btAgenda
+            // 
+            this.btAgenda.BackColor = System.Drawing.Color.Turquoise;
+            this.btAgenda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btAgenda.FlatAppearance.BorderSize = 0;
+            this.btAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAgenda.Image = global::Projeto_V1.Properties.Resources.Expand_Arrow_20px;
+            this.btAgenda.Location = new System.Drawing.Point(0, 0);
+            this.btAgenda.Name = "btAgenda";
+            this.btAgenda.Size = new System.Drawing.Size(190, 62);
+            this.btAgenda.TabIndex = 0;
+            this.btAgenda.Text = "Agenda";
+            this.btAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btAgenda.UseVisualStyleBackColor = false;
+            this.btAgenda.Click += new System.EventHandler(this.btAgenda_Click_1);
+            // 
+            // btFuncionario
+            // 
+            this.btFuncionario.BackColor = System.Drawing.Color.Turquoise;
+            this.btFuncionario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btFuncionario.FlatAppearance.BorderSize = 0;
+            this.btFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFuncionario.Image = global::Projeto_V1.Properties.Resources.Expand_Arrow_20px;
+            this.btFuncionario.Location = new System.Drawing.Point(0, 0);
+            this.btFuncionario.MaximumSize = new System.Drawing.Size(190, 227);
+            this.btFuncionario.MinimumSize = new System.Drawing.Size(190, 60);
+            this.btFuncionario.Name = "btFuncionario";
+            this.btFuncionario.Size = new System.Drawing.Size(190, 62);
+            this.btFuncionario.TabIndex = 0;
+            this.btFuncionario.Text = "Funcionários";
+            this.btFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btFuncionario.UseVisualStyleBackColor = false;
+            this.btFuncionario.Click += new System.EventHandler(this.btFuncionario_Click_1);
+            // 
+            // btCliente
+            // 
+            this.btCliente.BackColor = System.Drawing.Color.Turquoise;
+            this.btCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btCliente.FlatAppearance.BorderSize = 0;
+            this.btCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCliente.Image = global::Projeto_V1.Properties.Resources.Expand_Arrow_20px;
+            this.btCliente.Location = new System.Drawing.Point(0, 0);
+            this.btCliente.MaximumSize = new System.Drawing.Size(190, 227);
+            this.btCliente.MinimumSize = new System.Drawing.Size(190, 60);
+            this.btCliente.Name = "btCliente";
+            this.btCliente.Size = new System.Drawing.Size(190, 62);
+            this.btCliente.TabIndex = 0;
+            this.btCliente.Text = "Clientes";
+            this.btCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btCliente.UseVisualStyleBackColor = false;
+            this.btCliente.Click += new System.EventHandler(this.btCliente_Click_1);
+            // 
             // btServicos
             // 
             this.btServicos.BackColor = System.Drawing.Color.Turquoise;
@@ -431,22 +479,7 @@
             this.btServicos.Text = "Serviços";
             this.btServicos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btServicos.UseVisualStyleBackColor = false;
-            // 
-            // btAgenda
-            // 
-            this.btAgenda.BackColor = System.Drawing.Color.Turquoise;
-            this.btAgenda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btAgenda.FlatAppearance.BorderSize = 0;
-            this.btAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAgenda.Image = global::Projeto_V1.Properties.Resources.Expand_Arrow_20px;
-            this.btAgenda.Location = new System.Drawing.Point(0, 0);
-            this.btAgenda.Name = "btAgenda";
-            this.btAgenda.Size = new System.Drawing.Size(190, 62);
-            this.btAgenda.TabIndex = 0;
-            this.btAgenda.Text = "Agenda";
-            this.btAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btAgenda.UseVisualStyleBackColor = false;
+            this.btServicos.Click += new System.EventHandler(this.btServicos_Click_1);
             // 
             // relogioGif
             // 
@@ -459,12 +492,23 @@
             this.relogioGif.TabIndex = 3;
             this.relogioGif.TabStop = false;
             // 
+            // panelAgenda
+            // 
+            this.panelAgenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAgenda.Location = new System.Drawing.Point(202, 69);
+            this.panelAgenda.Name = "panelAgenda";
+            this.panelAgenda.Size = new System.Drawing.Size(1149, 659);
+            this.panelAgenda.TabIndex = 3;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.panelAgenda);
             this.Controls.Add(this.panelLeftModal);
             this.Controls.Add(this.panelLeftTop);
             this.Controls.Add(this.PanelTop);
@@ -514,6 +558,11 @@
         private System.Windows.Forms.Button btServicoCriar;
         private System.Windows.Forms.Button btServicoConsulta;
         private System.Windows.Forms.Button btServicos;
+        private System.Windows.Forms.Timer timerAgenda;
+        private System.Windows.Forms.Timer timerFuncionarios;
+        private System.Windows.Forms.Timer timerClientes;
+        private System.Windows.Forms.Timer timerServicos;
+        private System.Windows.Forms.Panel panelAgenda;
     }
 }
 
