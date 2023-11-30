@@ -51,7 +51,7 @@ namespace Projeto_V1
         }
         private void CloseOtherDropdowns(int currentDropdown, bool isSameButton)
         {
-            int alturaPainel = 85;
+            int alturaPainel = 86;
             int alturaPainel2 = 167;
             int alturaPainel3 = 167;
             int alturaPainel4 = 167;
@@ -113,7 +113,7 @@ namespace Projeto_V1
             timerFuncionarios.Start();
         }
 
-        private void btCliente_Click_1(object sender, EventArgs e)
+        private void btClientes_Click_1(object sender, EventArgs e)
         {
             CloseOtherDropdowns(3, true);
             timerClientes.Start();
