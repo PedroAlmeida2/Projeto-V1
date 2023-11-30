@@ -16,5 +16,11 @@ namespace Projeto_V1
         {
             InitializeComponent();
         }
+
+        private void timerRelogio_Tick(object sender, EventArgs e)
+        {
+            this.hora.Text = DateTime.Now.ToString("HH:mm:ss");
+            this.data.Text = DateTime.Today.ToString("dd/MM/yyyy");
+        }
     }
 }
