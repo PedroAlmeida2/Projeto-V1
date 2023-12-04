@@ -29,12 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.PanelTop = new System.Windows.Forms.FlowLayoutPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelLeftTop = new System.Windows.Forms.Panel();
             this.hora = new System.Windows.Forms.Label();
             this.data = new System.Windows.Forms.Label();
             this.relogioGif = new System.Windows.Forms.PictureBox();
             this.panelLeftModal = new System.Windows.Forms.Panel();
+            this.panelResumo = new System.Windows.Forms.Panel();
+            this.saldo = new System.Windows.Forms.Label();
+            this.numCancelados = new System.Windows.Forms.Label();
+            this.numConcluidos = new System.Windows.Forms.Label();
+            this.numAgendamentos = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelDropDown2 = new System.Windows.Forms.Panel();
             this.btFuncionarioDeletar = new System.Windows.Forms.Button();
             this.btFuncionarioEditar = new System.Windows.Forms.Button();
@@ -63,25 +72,23 @@
             this.timerClientes = new System.Windows.Forms.Timer(this.components);
             this.timerServicos = new System.Windows.Forms.Timer(this.components);
             this.panelAgenda = new System.Windows.Forms.Panel();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.labelHoraLogin = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelUsuario = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.panelLeftTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.relogioGif)).BeginInit();
             this.panelLeftModal.SuspendLayout();
+            this.panelResumo.SuspendLayout();
             this.panelDropDown2.SuspendLayout();
             this.panelDropDown.SuspendLayout();
             this.panelDropDown3.SuspendLayout();
             this.panelDropDown4.SuspendLayout();
+            this.panelTop.SuspendLayout();
+            this.logoutButton.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // PanelTop
-            // 
-            this.PanelTop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.PanelTop.Location = new System.Drawing.Point(202, 0);
-            this.PanelTop.Name = "PanelTop";
-            this.PanelTop.Size = new System.Drawing.Size(1149, 69);
-            this.PanelTop.TabIndex = 0;
             // 
             // panelLeftTop
             // 
@@ -130,6 +137,7 @@
             this.panelLeftModal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelLeftModal.BackColor = System.Drawing.Color.Silver;
+            this.panelLeftModal.Controls.Add(this.panelResumo);
             this.panelLeftModal.Controls.Add(this.panelDropDown2);
             this.panelLeftModal.Controls.Add(this.panelDropDown);
             this.panelLeftModal.Controls.Add(this.panelDropDown3);
@@ -139,6 +147,102 @@
             this.panelLeftModal.Size = new System.Drawing.Size(202, 659);
             this.panelLeftModal.TabIndex = 2;
             // 
+            // panelResumo
+            // 
+            this.panelResumo.BackColor = System.Drawing.Color.Silver;
+            this.panelResumo.Controls.Add(this.saldo);
+            this.panelResumo.Controls.Add(this.numCancelados);
+            this.panelResumo.Controls.Add(this.numConcluidos);
+            this.panelResumo.Controls.Add(this.numAgendamentos);
+            this.panelResumo.Controls.Add(this.label5);
+            this.panelResumo.Controls.Add(this.label4);
+            this.panelResumo.Controls.Add(this.label1);
+            this.panelResumo.Controls.Add(this.label3);
+            this.panelResumo.Location = new System.Drawing.Point(1, 409);
+            this.panelResumo.Name = "panelResumo";
+            this.panelResumo.Size = new System.Drawing.Size(201, 250);
+            this.panelResumo.TabIndex = 15;
+            // 
+            // saldo
+            // 
+            this.saldo.AutoSize = true;
+            this.saldo.Location = new System.Drawing.Point(89, 220);
+            this.saldo.Name = "saldo";
+            this.saldo.Size = new System.Drawing.Size(19, 13);
+            this.saldo.TabIndex = 7;
+            this.saldo.Text = "50";
+            // 
+            // numCancelados
+            // 
+            this.numCancelados.AutoSize = true;
+            this.numCancelados.Location = new System.Drawing.Point(89, 143);
+            this.numCancelados.Name = "numCancelados";
+            this.numCancelados.Size = new System.Drawing.Size(19, 13);
+            this.numCancelados.TabIndex = 6;
+            this.numCancelados.Text = "50";
+            // 
+            // numConcluidos
+            // 
+            this.numConcluidos.AutoSize = true;
+            this.numConcluidos.Location = new System.Drawing.Point(89, 85);
+            this.numConcluidos.Name = "numConcluidos";
+            this.numConcluidos.Size = new System.Drawing.Size(19, 13);
+            this.numConcluidos.TabIndex = 5;
+            this.numConcluidos.Text = "50";
+            // 
+            // numAgendamentos
+            // 
+            this.numAgendamentos.AutoSize = true;
+            this.numAgendamentos.Location = new System.Drawing.Point(89, 28);
+            this.numAgendamentos.Name = "numAgendamentos";
+            this.numAgendamentos.Size = new System.Drawing.Size(19, 13);
+            this.numAgendamentos.TabIndex = 4;
+            this.numAgendamentos.Text = "50";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(73, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 18);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Saldo";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(51, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 18);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Cancelados";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Concluidos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(36, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 18);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Agendamentos";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelDropDown2
             // 
             this.panelDropDown2.BackColor = System.Drawing.Color.Transparent;
@@ -147,8 +251,8 @@
             this.panelDropDown2.Controls.Add(this.btFuncionarioCadastrar);
             this.panelDropDown2.Controls.Add(this.btFuncionarioConsulta);
             this.panelDropDown2.Controls.Add(this.btFuncionario);
-            this.panelDropDown2.Location = new System.Drawing.Point(0, 80);
-            this.panelDropDown2.MaximumSize = new System.Drawing.Size(202, 227);
+            this.panelDropDown2.Location = new System.Drawing.Point(0, 60);
+            this.panelDropDown2.MaximumSize = new System.Drawing.Size(202, 224);
             this.panelDropDown2.MinimumSize = new System.Drawing.Size(202, 60);
             this.panelDropDown2.Name = "panelDropDown2";
             this.panelDropDown2.Size = new System.Drawing.Size(202, 60);
@@ -237,7 +341,7 @@
             this.panelDropDown.Controls.Add(this.btAgendaConsulta);
             this.panelDropDown.Controls.Add(this.btAgenda);
             this.panelDropDown.Location = new System.Drawing.Point(0, 0);
-            this.panelDropDown.MaximumSize = new System.Drawing.Size(202, 146);
+            this.panelDropDown.MaximumSize = new System.Drawing.Size(202, 142);
             this.panelDropDown.MinimumSize = new System.Drawing.Size(202, 60);
             this.panelDropDown.Name = "panelDropDown";
             this.panelDropDown.Size = new System.Drawing.Size(202, 60);
@@ -298,8 +402,8 @@
             this.panelDropDown3.Controls.Add(this.btClienteCadastrar);
             this.panelDropDown3.Controls.Add(this.btClienteConsulta);
             this.panelDropDown3.Controls.Add(this.btCliente);
-            this.panelDropDown3.Location = new System.Drawing.Point(0, 161);
-            this.panelDropDown3.MaximumSize = new System.Drawing.Size(202, 227);
+            this.panelDropDown3.Location = new System.Drawing.Point(0, 119);
+            this.panelDropDown3.MaximumSize = new System.Drawing.Size(202, 224);
             this.panelDropDown3.MinimumSize = new System.Drawing.Size(202, 60);
             this.panelDropDown3.Name = "panelDropDown3";
             this.panelDropDown3.Size = new System.Drawing.Size(202, 60);
@@ -388,8 +492,8 @@
             this.panelDropDown4.Controls.Add(this.btServicoCriar);
             this.panelDropDown4.Controls.Add(this.btServicoConsulta);
             this.panelDropDown4.Controls.Add(this.btServicos);
-            this.panelDropDown4.Location = new System.Drawing.Point(0, 240);
-            this.panelDropDown4.MaximumSize = new System.Drawing.Size(202, 227);
+            this.panelDropDown4.Location = new System.Drawing.Point(0, 179);
+            this.panelDropDown4.MaximumSize = new System.Drawing.Size(202, 224);
             this.panelDropDown4.MinimumSize = new System.Drawing.Size(202, 60);
             this.panelDropDown4.Name = "panelDropDown4";
             this.panelDropDown4.Size = new System.Drawing.Size(202, 60);
@@ -509,16 +613,83 @@
             this.panelAgenda.Size = new System.Drawing.Size(1149, 659);
             this.panelAgenda.TabIndex = 3;
             // 
+            // panelTop
+            // 
+            this.panelTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelTop.Controls.Add(this.labelHoraLogin);
+            this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Controls.Add(this.labelUsuario);
+            this.panelTop.Controls.Add(this.logoutButton);
+            this.panelTop.Location = new System.Drawing.Point(202, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(1149, 69);
+            this.panelTop.TabIndex = 4;
+            // 
+            // labelHoraLogin
+            // 
+            this.labelHoraLogin.AutoSize = true;
+            this.labelHoraLogin.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHoraLogin.Location = new System.Drawing.Point(514, 26);
+            this.labelHoraLogin.Name = "labelHoraLogin";
+            this.labelHoraLogin.Size = new System.Drawing.Size(145, 18);
+            this.labelHoraLogin.TabIndex = 3;
+            this.labelHoraLogin.Text = "Horário de login:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(315, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 18);
+            this.label2.TabIndex = 2;
+            // 
+            // labelUsuario
+            // 
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.Location = new System.Drawing.Point(5, 26);
+            this.labelUsuario.Name = "labelUsuario";
+            this.labelUsuario.Size = new System.Drawing.Size(75, 18);
+            this.labelUsuario.TabIndex = 1;
+            this.labelUsuario.Text = "Usuário:";
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutButton.Dock = System.Windows.Forms.DockStyle.None;
+            this.logoutButton.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.logoutButton.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.logoutButton.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.logoutButton.Location = new System.Drawing.Point(1099, 13);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(39, 39);
+            this.logoutButton.TabIndex = 0;
+            this.logoutButton.Text = "Logout";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton1.Text = "Logout";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelAgenda);
             this.Controls.Add(this.panelLeftModal);
             this.Controls.Add(this.panelLeftTop);
-            this.Controls.Add(this.PanelTop);
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(1366, 768);
             this.Name = "Principal";
             this.Text = "Form1";
@@ -526,17 +697,21 @@
             this.panelLeftTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.relogioGif)).EndInit();
             this.panelLeftModal.ResumeLayout(false);
+            this.panelResumo.ResumeLayout(false);
+            this.panelResumo.PerformLayout();
             this.panelDropDown2.ResumeLayout(false);
             this.panelDropDown.ResumeLayout(false);
             this.panelDropDown3.ResumeLayout(false);
             this.panelDropDown4.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
+            this.logoutButton.ResumeLayout(false);
+            this.logoutButton.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel PanelTop;
         private System.Windows.Forms.Panel panelLeftTop;
         private System.Windows.Forms.Panel panelLeftModal;
         private System.Windows.Forms.PictureBox relogioGif;
@@ -570,6 +745,21 @@
         private System.Windows.Forms.Timer timerClientes;
         private System.Windows.Forms.Timer timerServicos;
         private System.Windows.Forms.Panel panelAgenda;
+        private System.Windows.Forms.Panel panelTop;
+        private System.Windows.Forms.ToolStrip logoutButton;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelUsuario;
+        private System.Windows.Forms.Panel panelResumo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelHoraLogin;
+        private System.Windows.Forms.Label saldo;
+        private System.Windows.Forms.Label numCancelados;
+        private System.Windows.Forms.Label numConcluidos;
+        private System.Windows.Forms.Label numAgendamentos;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
     }
 }
 

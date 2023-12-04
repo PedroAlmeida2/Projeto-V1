@@ -22,6 +22,8 @@ namespace Projeto_V1
         public Principal()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
         private void ActivateButton(object btnSender)

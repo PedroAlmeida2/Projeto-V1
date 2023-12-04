@@ -95,5 +95,8 @@
   <ItemGroup>
     <None Include="Resources\Collapse Arrow_20px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
